@@ -1,5 +1,6 @@
 package com.playhrzn.wce;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 import java.util.Arrays;
@@ -40,13 +41,25 @@ public class Config {
             SERVER_BUILDER.comment("Fluid Control").push("control");
 
             finiteFluids = SERVER_BUILDER.comment("Block registry names for fluids that should be made finite")
-                    .define("finiteFluids", Arrays.asList("Hello", "Welcome", "rude"));
+                    .define("finiteFluids", Arrays.asList(
+                            "minecraft:water"
+                    ));
 
             infiniteBiomes = SERVER_BUILDER.comment("Biomes in which these fluids should be infinite")
-                    .define("infiniteBiomes",Arrays.asList("Hello", "Welcome", "rude"));
+                    .define("infiniteBiomes", Arrays.asList(
+                            "minecraft:ocean",
+                            "minecraft:deep_ocean",
+                            "minecraft:beach",
+                            "minecraft:stone_beach",
+                            "minecraft:cold_beach",
+                            "minecraft:beaches",
+                            "minecraft:river"
+                    ));
 
             infiniteDimensions = SERVER_BUILDER.comment("Dimensions in which these fluids should be infinite")
-                    .define("infiniteDimensions",Arrays.asList("Hello", "Welcome", "rude"));
+                    .define("infiniteDimensions", Arrays.asList(
+                            "minecraft:end"
+                    ));
 
             SERVER_BUILDER.pop();
             SERVER_CONFIG = SERVER_BUILDER.build();
