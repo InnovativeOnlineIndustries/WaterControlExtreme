@@ -53,10 +53,6 @@ minecraft {
     }
 }
 
-repositories {
-
-}
-
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     //compile fg.deobf("com.hrznstudio:titanium:${minecraft_version}-${titanium_version}")
