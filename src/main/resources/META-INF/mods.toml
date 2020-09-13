@@ -4,7 +4,7 @@ license="MIT"
 issueTrackerURL="https://github.com/InnovativeOnlineIndustries/WaterControlExtreme/issues"
 
 [[mods]]
-modId="${archive}"
+modId="wce"
 version="${version}"
 displayName="${title}"
 displayURL="https://github.com/InnovativeOnlineIndustries/WaterControlExtreme"
