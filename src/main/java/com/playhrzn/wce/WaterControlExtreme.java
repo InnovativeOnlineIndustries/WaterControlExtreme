@@ -37,7 +37,7 @@ public class WaterControlExtreme {
 
     // Likely no longer needed
     public static final String NAME = "Water Control Extreme";
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger("wce");
 
     public WaterControlExtreme() {
         // Register the setup method for modloading
@@ -91,7 +91,7 @@ public class WaterControlExtreme {
             }
 
             final ServerWorld world = (ServerWorld) eventWorld;
-            ResourceLocation biome = world.func_241828_r().func_243612_b(Registry.BIOME_KEY).getKey(world.getBiome(pos));
+            ResourceLocation biome = world.func_241828_r().getRegistry(Registry.BIOME_KEY).getKey(world.getBiome(pos));
             if (biome == null) {
                 return;
             }
@@ -102,7 +102,7 @@ public class WaterControlExtreme {
                 }
             }
 
-            final ResourceLocation dimId = getKeyFromType(eventWorld.func_230315_m_());
+            final ResourceLocation dimId = getKeyFromType(eventWorld.getDimensionType());
             for (int i2 = 0; i2 < Config.CONTROL.infiniteDimensions.get().size(); ++i2) {
                 final ResourceLocation configDim = new ResourceLocation(Config.CONTROL.infiniteDimensions.get().get(i2));
                 if (configDim.equals(dimId)) {
