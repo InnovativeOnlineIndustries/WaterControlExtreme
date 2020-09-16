@@ -24,7 +24,7 @@ public class FluidControlEntry {
     }
 
     public ResourceLocation getId() {
-        return id;
+        return id == null ? biome.getRegistryName() : id;
     }
 
     public Biome getBiome() {
